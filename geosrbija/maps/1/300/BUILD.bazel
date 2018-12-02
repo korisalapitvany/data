@@ -21,7 +21,7 @@ download(
         "naziv",
     ],
     ids = range(1, 13),
-    theme_uuid = "TODO",
+    theme_uuid = "2523fd63-adcb-4b4b-bd15-e55a901efcd5",
 )
 
 extract_wkt()

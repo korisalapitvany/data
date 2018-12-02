@@ -23,7 +23,7 @@ download(
         "namn1",
     ],
     ids = range(1, 93),
-    theme_uuid = "TODO",
+    theme_uuid = "998ca14e-f9d4-4bc9-86b9-1488400365a2",
 )
 
 extract_wkt()

@@ -24,7 +24,7 @@ download(
         "tip_dobra",
     ],
     ids = range(1, 193),
-    theme_uuid = "TODO",
+    theme_uuid = "25b4792d-e53a-4904-8a40-71e05602ce52",
 )
 
 extract_wkt()
