@@ -16,13 +16,24 @@ load("@tools//:defs.bzl", "json_test")
 load("@tools//cmd/geosrbija:defs.bzl", "download", "extract_wkt")
 
 download(
-    name = "download",
+    name = "download_republika_srbija",
     columns = [
         "republika_ime",
         "republika_imel",
     ],
     ids = [407],
     theme_uuid = "1665cf18-0fe2-4c07-b7a1-9e099b8f0d2c",
+)
+
+download(
+    name = "download_pokrajina",
+    columns = [
+        "rap_ime",
+        "rap_imel",
+        "rap_sifra",
+    ],
+    ids = [419, 420, 421],
+    theme_uuid = "925897b0-e563-4d4b-bcc3-4dd52ff51d0e",
 )
 
 extract_wkt()
