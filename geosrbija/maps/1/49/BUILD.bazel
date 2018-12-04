@@ -1,0 +1,62 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+load("@tools//:defs.bzl", "json_test")
+load("@tools//cmd/geosrbija:defs.bzl", "download", "extract_wkt")
+
+download(
+    name = "download",
+    columns = [
+        "grad_ime",
+        "grad_imel",
+        "grad_maticni_broj",
+    ],
+    ids = [
+        590,  # ZAJEČAR
+        591,  # KRAGUJEVAC
+        592,  # KRUŠEVAC
+        593,  # NOVI PAZAR
+        594,  # JAGODINA
+        595,  # ČAČAK
+        596,  # ZRENJANIN
+        597,  # VALJEVO
+        598,  # KRALJEVO
+        599,  # LESKOVAC
+        600,  # VRANJE
+        601,  # PANČEVO
+        602,  # SMEDEREVO
+        603,  # POŽAREVAC
+        604,  # NOVI SAD
+        605,  # SUBOTICA
+        606,  # BEOGRAD
+        607,  # SOMBOR
+        608,  # NIŠ
+        609,  # UŽICE
+        610,  # KIKINDA
+        611,  # VRŠAC
+        612,  # PIROT
+        613,  # SREMSKA MITROVICA
+        614,  # ŠABAC
+        620,  # LOZNICA
+        622,  # PRIŠTINA
+    ],
+    theme_uuid = "ff0d46ef-63cd-4dd6-82c1-17b6231df467",
+)
+
+extract_wkt()
+
+json_test(
+    name = "json_test",
+    srcs = glob(["*.json"]),
+)
