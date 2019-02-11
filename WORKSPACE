@@ -23,6 +23,6 @@ load("@tools//:package.bzl", "register_repositories")
 
 register_repositories()
 
-load("@tools//:dependencies.bzl", "install_dependencies")
+load("@tools//:deps.bzl", "install_dependencies")
 
 install_dependencies()
